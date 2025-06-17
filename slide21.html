@@ -357,205 +357,110 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const ctx = document.getElementById('roadmapChart').getContext('2d');
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('roadmapChart').getContext('2d');
 
-        // Register plugin for datalabels
-        Chart.register(ChartDataLabels);
+    const months = ['Jul 2025', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Ene 2026', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
 
-        const months = ['Jul 2025', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic', 'Ene 2026', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
+    const areas = [
+    {
+        label: 'Desarrollo tecnológico',
+        backgroundColor: 'rgba(112, 33, 204, 0.1)',
+        borderColor: 'rgba(112, 33, 204, 0.7)',
+        data: [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],
+        fill: true,
+        tension: 0.4
+    },
+    {
+        label: 'Validación clínica',
+        backgroundColor: 'rgba(255, 157, 0, 0.1)',
+        borderColor: 'rgba(255, 157, 0, 0.7)',
+        data: [10, 10, 10, 30, 30, 30, 50, 50, 70, 70, 85, 100],
+        fill: true,
+        tension: 0.4
+    },
+    {
+        label: 'Expansión comercial',
+        backgroundColor: 'rgba(22, 136, 177, 0.1)',
+        borderColor: 'rgba(22, 136, 177, 0.7)',
+        data: [0, 0, 15, 15, 20, 40, 50, 50, 70, 75, 85, 100],
+        fill: true,
+        tension: 0.4
+    }
+];
 
-        const milestones = [
-            { x: 0, y: 20, label: 'Inicio fase B2B', color: '#7021CC', radius: 8 },
-            { x: 2, y: 70, label: '10 cuentos validados', color: '#FF9D00', radius: 8 },
-            { x: 4, y: 40, label: 'Lanzamiento app móvil', color: '#1688B1', radius: 8 },
-            { x: 6, y: 80, label: 'Inicio ronda inversión', color: '#7021CC', radius: 10 },
-            { x: 8, y: 30, label: '20 cuentos validados', color: '#FF9D00', radius: 8 },
-            { x: 10, y: 60, label: 'Expansión LATAM', color: '#1688B1', radius: 10 }
-        ];
 
-        const areas = [
-            {
-                label: 'Desarrollo tecnológico',
-                backgroundColor: 'rgba(112, 33, 204, 0.1)',
-                borderColor: 'rgba(112, 33, 204, 0.7)',
-                pointBackgroundColor: 'rgba(112, 33, 204, 0)',
-                pointBorderColor: 'rgba(112, 33, 204, 0)',
-                data: [40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95],
-                fill: true,
-                tension: 0.4
-            },
-            {
-                label: 'Validación clínica',
-                backgroundColor: 'rgba(255, 157, 0, 0.1)',
-                borderColor: 'rgba(255, 157, 0, 0.7)',
-                pointBackgroundColor: 'rgba(255, 157, 0, 0)',
-                pointBorderColor: 'rgba(255, 157, 0, 0)',
-                data: [10, 15, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75],
-                fill: true,
-                tension: 0.4
-            },
-            {
-                label: 'Expansión comercial',
-                backgroundColor: 'rgba(22, 136, 177, 0.1)',
-                borderColor: 'rgba(22, 136, 177, 0.7)',
-                pointBackgroundColor: 'rgba(22, 136, 177, 0)',
-                pointBorderColor: 'rgba(22, 136, 177, 0)',
-                data: [5, 10, 15, 25, 30, 40, 50, 55, 60, 65, 70, 80],
-                fill: true,
-                tension: 0.4
-            }
-        ];
-
-        const roadmapChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: months,
-                datasets: areas
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: {
-                            boxWidth: 12,
-                            font: {
-                                family: 'Poppins',
-                                size: 12
-                            }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                        titleColor: '#381066',
-                        bodyColor: '#555',
-                        titleFont: {
-                            family: 'Poppins',
-                            size: 14,
-                            weight: 'bold'
-                        },
-                        bodyFont: {
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: months,
+            datasets: areas
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        boxWidth: 12,
+                        font: {
                             family: 'Poppins',
                             size: 12
-                        },
-                        borderColor: 'rgba(112, 33, 204, 0.2)',
-                        borderWidth: 1,
-                        padding: 10,
-                        displayColors: true,
-                        caretSize: 6,
-                        caretPadding: 8,
-                        callbacks: {
-                            title: function(context) {
-                                return context[0].label;
-                            },
-                            label: function(context) {
-                                return `${context.dataset.label}: ${context.raw}% completado`;
-                            }
-                        }
-                    },
-                    datalabels: {
-                        display: false
-                    }
-                },
-                scales: {
-                    y: {
-                        min: 0,
-                        max: 100,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            },
-                            font: {
-                                family: 'Poppins',
-                                size: 11
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Progreso',
-                            font: {
-                                family: 'Poppins',
-                                size: 12,
-                                weight: 'bold'
-                            }
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            font: {
-                                family: 'Poppins',
-                                size: 11
-                            }
                         }
                     }
                 },
-                animation: {
-                    duration: 2000,
-                    easing: 'easeOutQuart'
+                tooltip: {
+                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                    borderColor: '#ddd',
+                    borderWidth: 1,
+                    titleColor: '#381066',
+                    bodyColor: '#444',
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.dataset.label}: ${context.raw}% completado`;
+                        }
+                    }
                 }
+            },
+            scales: {
+                y: {
+                    min: 0,
+                    max: 100,
+                    ticks: {
+                        callback: value => value + '%',
+                        font: {
+                            family: 'Poppins',
+                            size: 11
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Progreso',
+                        font: {
+                            family: 'Poppins',
+                            size: 12,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            family: 'Poppins',
+                            size: 11
+                        }
+                    }
+                }
+            },
+            animation: {
+                duration: 1500,
+                easing: 'easeOutQuart'
             }
-        });
-
-        // Add milestone markers with annotations
-        setTimeout(() => {
-            milestones.forEach((milestone, index) => {
-                const canvas = roadmapChart.canvas;
-                const ctx = canvas.getContext('2d');
-                const xAxis = roadmapChart.scales.x;
-                const yAxis = roadmapChart.scales.y;
-
-                const xPos = xAxis.getPixelForValue(milestone.x);
-                const yPos = yAxis.getPixelForValue(milestone.y);
-
-                // Draw circle
-                ctx.beginPath();
-                ctx.arc(xPos, yPos, milestone.radius, 0, 2 * Math.PI);
-                ctx.fillStyle = milestone.color;
-                ctx.fill();
-
-                // Draw pulse effect
-                let alpha = 0.5;
-                let size = milestone.radius;
-
-                function drawPulse() {
-                    ctx.beginPath();
-                    ctx.arc(xPos, yPos, size, 0, 2 * Math.PI);
-                    ctx.fillStyle = `rgba(${milestone.color.replace(/[^\d,]/g, '')}, ${alpha})`;
-                    ctx.fill();
-
-                    size += 0.5;
-                    alpha -= 0.01;
-
-                    if (alpha > 0) {
-                        requestAnimationFrame(drawPulse);
-                    } else {
-                        size = milestone.radius;
-                        alpha = 0.5;
-                    }
-                }
-
-                // Draw label
-                ctx.font = "600 12px Poppins";
-                ctx.fillStyle = "#381066";
-                ctx.textAlign = "center";
-
-                // Position label based on position in chart
-                let labelYOffset = -25;
-                if (milestone.y > 60) {
-                    labelYOffset = 25; // Place label below point if point is high
-                }
-
-                ctx.fillText(milestone.label, xPos, yPos + labelYOffset);
-
-                // Start pulse animation with delay based on index
-                setTimeout(() => {
-                    drawPulse();
-                }, index * 300 + 1000);
-            });
-        }, 500);
+        }
     });
+});
 </script>
+
 </body>
 </html>
