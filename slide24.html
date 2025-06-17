@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto y Próximos Pasos - Slide 20/20</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgba(206, 171, 255, 0.1) 0%, rgba(249, 199, 100, 0.1) 100%);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    position: relative;
+  }
+  .thank-you {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-size: 100px;
+    font-weight: 800;
+    margin: 50px 0;
+  }
+  .thank-you .new {
+    color: #7021CC;
+  }
+  .thank-you .little {
+    color: #FF9D00;
+  }
+  .qr-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+    width: fit-content;
+  }
+  .qr-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #381066;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .qr-code img {
+    width: 420px;
+    height: 420px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  .qr-desc {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    max-width: 220px;
+    margin-top: 10px;
+  }
+  .action-container {
+    background-color: rgba(255, 157, 0, 0.05);
+    border-radius: 15px;
+    padding: 30px 50px;
+    text-align: center;
+    margin: 40px auto;
+    border-left: 4px solid #FF9D00;
+    max-width: 900px;
+  }
+  .action-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
+    font-size: 26px;
+    color: #FF9D00;
+    margin-bottom: 15px;
+  }
+  .action-steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .action-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+  }
+  .step-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: white;
+    color: #FF9D00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  .step-text {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+  }
+  .website-footer {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 40px 0 20px;
+  }
+  .website-footer span {
+    color: #7021CC;
+  }
+</style>
+</head>
+<body>
+
+<div class="thank-you">
+  <span class="new">¡Muchas</span> <span class="little">Gracias!</span>
+</div>
+
+<div class="qr-container">
+  <div class="qr-title">¡Prueba la demo de nuestra próxima app...!</div>
+  <div class="qr-code">
+    <img src="images/qr-code.png" alt="QR Demo Newslittle">
+  </div>
+</div>
+
+<div class="website-footer">
+  www.<span>new</span><span style="color: #FF9D00;">little</span>.com | Transformando la salud emocional infantil, una historia a la vez
+</div>
+
+</body>
+</html>
