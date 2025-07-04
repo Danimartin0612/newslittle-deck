@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Problema: Real y Urgente - Slide 3/26</title>
+    <title>¿Qué es NewLittle? - Slide 2/26</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;600;700&family=Dongle:wght@700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="global.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.7/dist/countUp.min.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -18,6 +16,7 @@
             padding: 0;
             overflow: hidden;
         }
+
         .gradient-bg {
             background: linear-gradient(135deg, rgba(206, 171, 255, 0.1) 0%, rgba(249, 199, 100, 0.1) 100%);
             position: absolute;
@@ -29,223 +28,210 @@
         }
         h1 {
             font-family: 'Merriweather', serif;
-            color: #7021CC;
-            font-size: 42px;
+            color: #381066;
+            font-size: 40px;
             font-weight: 600;
-            margin-bottom: 0;
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-        }
-        .urgency-subtitle {
-            color: #FF9D00;
-            font-size: 20px;
-            font-weight: 500;
-            font-style: italic;
-            margin-bottom: 20px;
-            font-family: 'Merriweather', serif;
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-            animation-delay: 0.2s;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
         h2 {
             font-family: 'Merriweather', serif;
             color: #7021CC;
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 15px;
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-            animation-delay: 0.8s;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
-        .stat-box {
+        .feature-box {
             background-color: white;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            border-top: 4px solid;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            opacity: 0;
-            transform: translateY(20px);
+            position: relative;
+            z-index: 2;
         }
-        .stat-box:hover {
+        .feature-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-        .box-anxiety {
-            border-color: #7021CC;
-            animation: fadeInUp 0.6s ease forwards;
-            animation-delay: 0.3s;
-        }
-        .box-mental {
-            border-color: #FF9D00;
-            animation: fadeInUp 0.6s ease forwards;
-            animation-delay: 0.4s;
-        }
-        .box-childhood {
-            border-color: #7021CC;
-            animation: fadeInUp 0.6s ease forwards;
-            animation-delay: 0.5s;
-        }
-        .box-hospital {
-            border-color: #FF9D00;
-            animation: fadeInUp 0.6s ease forwards;
-            animation-delay: 0.6s;
-        }
-        .stat-icon {
-            font-size: 30px;
+        .feature-icon {
+            color: #7021CC;
+            font-size: 20px;
             margin-bottom: 10px;
             text-align: center;
-            animation: pulse 2s infinite;
-        }
-        .icon-anxiety {
-            color: #7021CC;
-        }
-        .icon-mental {
-            color: #FF9D00;
-        }
-        .icon-childhood {
-            color: #7021CC;
-        }
-        .icon-hospital {
-            color: #FF9D00;
-        }
-        .stat-number {
-            font-size: 30px;
-            font-weight: 700;
-            color: #381066;
-            margin-bottom: 5px;
-            text-align: center;
-        }
-        .stat-desc {
-            text-align: center;
-            font-size: 15px;
-            line-height: 1.4;
-        }
-        .challenge-box {
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-left: 4px solid #7021CC;
+            height: 20px;
             display: flex;
             align-items: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            opacity: 0;
-            transform: translateY(20px);
+            justify-content: center;
         }
-        .challenge-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-        }
-        .left-challenges .challenge-box:nth-child(1) {
-            animation: fadeInLeft 0.6s ease forwards;
-            animation-delay: 0.9s;
-        }
-        .left-challenges .challenge-box:nth-child(2) {
-            animation: fadeInLeft 0.6s ease forwards;
-            animation-delay: 1.0s;
-        }
-        .right-challenges .challenge-box:nth-child(1) {
-            animation: fadeInRight 0.6s ease forwards;
-            animation-delay: 0.9s;
-        }
-        .right-challenges .challenge-box:nth-child(2) {
-            animation: fadeInRight 0.6s ease forwards;
-            animation-delay: 1.0s;
-        }
-        .challenge-icon {
-            font-size: 24px;
-            color: #7021CC;
-            margin-right: 15px;
-        }
-        .chart-container {
-            height: 200px;
-            position: relative;
-            margin-top: 15px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            animation-delay: 1.2s;
-        }
-        .chart-source {
-            font-size: 12px;
-            color: #666;
-            font-style: italic;
-            margin-top: 8px;
-            text-align: center;
-        }
-        .source {
-            font-size: 12px;
-            color: #666;
-            font-style: italic;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .source a, .chart-source a {
-            color: #7021CC;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: inline-flex;
-            align-items: center;
-        }
-        .source a:hover, .chart-source a:hover {
-            color: #8C29FF;
-            text-decoration: underline;
-        }
-        .source a i, .chart-source a i {
-            font-size: 10px;
-            margin-right: 4px;
-        }
-        .challenge-source {
-            font-size: 11px;
-            color: #666;
-            font-style: italic;
-            margin-top: 8px;
-            display: block;
-        }
-        .challenge-source a {
-            color: #7021CC;
-            text-decoration: none;
-            transition: color 0.2s;
-            display: inline-flex;
-            align-items: center;
-        }
-        .challenge-source a:hover {
-            color: #8C29FF;
-            text-decoration: underline;
-        }
-        .stats-container {
+        .feature-title {
+            color: #1688B1;
+            font-weight: 600;
+            font-size: 20px;
             margin-bottom: 10px;
+            text-align: center;
+        }
+        .feature-desc {
+            color: #333;
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .vision-box, .mission-box, .purpose-box {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .vision-box {
+            border-top: 4px solid #7021CC;
+        }
+        .mission-box {
+            border-top: 4px solid #1688B1;
+        }
+        .purpose-box {
+            border-top: 4px solid #FF9D00;
+        }
+        .vision-box:hover, .mission-box:hover, .purpose-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .values-section {
+            margin-top: 10px;
+        }
+        .value-icon {
+            font-size: 25px;
+            margin-bottom: 15px;
+            text-align: center;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .value-title {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mission-icon {
+            color: #1688B1;
+        }
+        .vision-icon {
+            color: #7021CC;
+        }
+        .purpose-icon {
+            color: #FF9D00;
+        }
+        .value-content {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #381066;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 10px;
+            color: #7021CC;
+            font-size: 22px;
+        }
+        .connection-container {
+            position: relative;
+        }
+        .connection-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(112,33,204,0.2), rgba(255,157,0,0.2), rgba(22,136,177,0.2));
+            z-index: 1;
+            pointer-events: none;
+        }
+        .vertical-connection {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 80%;
+            width: 1px;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(180deg, rgba(112,33,204,0.2), rgba(255,157,0,0.2));
+            z-index: 1;
+            pointer-events: none;
+        }
+        .feature-grid {
+            position: relative;
+        }
+        .highlighted-quote {
+            background-color: rgba(255,157,0,0.05);
+            border-left: 5px solid #FF9D00;
+            padding: 15px 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            transform: scale(0.98);
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .highlighted-quote:hover {
+            transform: scale(1);
+        }
+        .quote-text {
+            font-family: 'Merriweather', serif;
+            color: #381066;
+            font-size: 25px;
+            font-weight: 600;
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+        .quote-text:before, .quote-text:after {
+            content: '"';
+            color: #FF9D00;
+            font-size: 28px;
+            position: relative;
         }
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
         }
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
+        .delay-1 {
+            animation-delay: 0.1s;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        .delay-4 {
+            animation-delay: 0.4s;
         }
         .mascot-container {
             width: 60px;
@@ -263,54 +249,6 @@
             height: 85%;
             object-fit: contain;
         }
-        .highlighted-stat {
-            position: relative;
-        }
-        .highlight-circle {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #FF9D00;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: pulse 2s infinite;
-        }
-        .summary-box {
-            position: absolute;
-            bottom: 90px;
-            right: 40px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 10px 15px;
-            border-left: 4px solid #7021CC;
-            max-width: 200px;
-            opacity: 0;
-            transform: translateX(20px);
-            animation: fadeInLeft 0.6s ease forwards;
-            animation-delay: 1.5s;
-        }
-        .summary-title {
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #7021CC;
-        }
-        .summary-content {
-            font-size: 13px;
-            line-height: 1.4;
-        }
-        .summary-content span {
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
@@ -321,308 +259,100 @@
             <span class="new">New</span><span class="little">Little</span>
         </div>
 
-        <h1>El Problema: Real y Urgente</h1>
-        <div class="urgency-subtitle">Estamos ante una crisis invisible en la infancia</div>
+        <h1 class="animate-fade-in">¿Qué es NewLittle?</h1>
+        <h2 class="animate-fade-in delay-1">Una herramienta para una mejor salud emocional infantil</h2>
 
-        <div class="stats-container grid grid-cols-4 gap-5 mb-4">
-            <div class="stat-box box-anxiety highlighted-stat">
-                <div class="highlight-circle">!</div>
-                <div class="stat-icon icon-anxiety">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <div class="stat-number"><span id="counter1">10</span>%</div>
-                <div class="stat-desc">de niños de 3-17 años tienen ansiedad diagnosticada</div>
-                <div class="source">
-                    <a href="https://www.cdc.gov/children-mental-health/es/data-research/datos-y-estadisticas-sobre-la-salud-mental-de-los-ninos.html" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> CDC, 2023
-                    </a>
-                </div>
-            </div>
+        <div class="section-title animate-fade-in delay-1">
+            <i class="fas fa-lightbulb"></i> Nuestra propuesta
+        </div>
 
-            <div class="stat-box box-mental">
-                <div class="stat-icon icon-mental">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="stat-number"><span id="counter2">20.8</span>%</div>
-                <div class="stat-desc">de adolescentes padece algún problema de salud mental</div>
-                <div class="source">
-                    <a href="https://www.fundacionidis.com/sala-prensa/notas-de-prensa/el-70-de-los-trastornos-mentales-se-inician-en-la-etapa-infanto-juvenil" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Fundación IDIS, 2024
-                    </a>
-                </div>
-            </div>
+        <div class="connection-container animate-fade-in delay-2">
+            <div class="connection-line"></div>
+            <div class="vertical-connection"></div>
 
-            <div class="stat-box box-childhood highlighted-stat">
-                <div class="highlight-circle">!</div>
-                <div class="stat-icon icon-childhood">
-                    <i class="fas fa-child"></i>
+            <div class="grid grid-cols-2 gap-6 mb-8 feature-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <div class="feature-title">Cuentos terapéuticos personalizados</div>
+                    <div class="feature-desc">Combinamos IA ética con psicología del apego para crear historias que sanan en segundos.</div>
                 </div>
-                <div class="stat-number"><span id="counter3">70</span>%</div>
-                <div class="stat-desc">de los trastornos mentales se inician en la etapa infanto-juvenil</div>
-                <div class="source">
-                    <a href="https://www.larazon.es/sociedad/70-trastornos-mentales-inician-etapa-infantojuvenil-apunta-informe-instituto-desarrollo-integracion-sanidad_2023082364e61840714dff0001c65966.html" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> La Razón, 2023
-                    </a>
-                </div>
-            </div>
 
-            <div class="stat-box box-hospital">
-                <div class="stat-icon icon-hospital">
-                    <i class="fas fa-hospital-alt"></i>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div class="feature-title">Transformación de objetos de apego</div>
+                    <div class="feature-desc">El peluche o mascota favorita se convierte en protagonista, creando un puente emocional único.</div>
                 </div>
-                <div class="stat-number"><span id="counter4">58</span>%</div>
-                <div class="stat-desc">de las familias hospitalizadas experimentan elevados niveles de ansiedad</div>
-                <div class="source">
-                    <a href="https://mgyf.org/nivel-de-ansiedad-depresion-y-estres-en-pacientes-hospitalizados-en-medicina-interna-en-comparacion-con-los-de-cirugia/" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> SciELO, 2024
-                    </a>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-title">Herramienta fácil de usar</div>
+                    <div class="feature-desc">Diseñada para padres, profesionales y hospitales. Accesible desde cualquier dispositivo.</div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="feature-title">Respaldo científico</div>
+                    <div class="feature-desc">Basado en principios de psicología infantil y validado por expertos en salud mental.</div>
                 </div>
             </div>
         </div>
 
-        <h2>Desafíos Actuales</h2>
+        <div class="section-title animate-fade-in delay-3">
+            <i class="fas fa-heart"></i> Nuestros valores fundamentales
+        </div>
 
-<div class="grid grid-cols-2 gap-4">
-  <div class="col-span-1 left-challenges">
-    <div class="challenge-box">
-      <div class="challenge-icon">
-        <i class="fas fa-tools"></i>
-      </div>
-      <div>
-        <div class="font-semibold text-lg text-gray-700">Escasez de herramientas personalizadas</div>
-        <div class="text-gray-600">Faltan intervenciones atractivas y basadas en evidencia</div>
-      </div>
-    </div>
-    <div class="challenge-box">
-      <div class="challenge-icon">
-        <i class="fas fa-comment-dots"></i>
-      </div>
-      <div>
-        <div class="font-semibold text-lg text-gray-700">Dificultad para explicar conceptos dolorosos</div>
-        <div class="text-gray-600">Los niños carecen de recursos para entender situaciones complejas</div>
-      </div>
-    </div>
-  </div>
+        <div class="values-section animate-fade-in delay-3">
+            <div class="grid grid-cols-3 gap-6">
+                <div class="mission-box">
+                    <div class="value-icon mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="value-title mission-icon">
+                        Misión
+                    </div>
+                    <div class="value-content">
+                        Democratizar el acceso al apoyo emocional infantil a través de una plataforma terapéutica digital innovadora y validada.
+                    </div>
+                </div>
 
-  <div class="col-span-1 right-challenges">
-    <div class="challenge-box">
-      <div class="challenge-icon">
-        <i class="fas fa-expand-arrows-alt"></i>
-      </div>
-      <div>
-        <div class="font-semibold text-lg text-gray-700">Necesidad de soluciones escalables</div>
-        <div class="text-gray-600">Se requieren herramientas para contextos clínico, educativo y familiar</div>
-      </div>
-    </div>
+                <div class="vision-box">
+                    <div class="value-icon vision-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="value-title vision-icon">
+                        Visión
+                    </div>
+                    <div class="value-content">
+                        Un mundo donde el acceso a la salud mental infantil no dependa del lugar donde naciste, acompañando emocionalmente a cada niño, en cualquier momento y contexto.
+                    </div>
+                </div>
 
-    <!-- Nuevo cajón de desafío añadido -->
-    <div class="challenge-box">
-      <div class="challenge-icon">
-        <i class="fas fa-users"></i>
-      </div>
-      <div>
-        <div class="font-semibold text-lg text-gray-700">Falta de guías claras para padres y cuidadores</div>
-        <div class="text-gray-600">Los padres carecen de recursos accesibles para abordar temas difíciles con sus hijos</div>
-      </div>
-    </div>
-  </div>
-</div>
-        <div class="chart-container">
-            <canvas id="mentalHealthChart" width="2400" height="400"></canvas>
-            <div class="chart-source">
-                <a href="https://www.sanidad.gob.es/estadEstudios/estadisticas/estadisticas/estMinisterio/SIAP/Salud_mental_datos.pdf" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Análisis basado en datos de Unicef y OMS 2024 recogidos por newslittle
-                </a>
+                <div class="purpose-box">
+                    <div class="value-icon purpose-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="value-title purpose-icon">
+                        Propósito
+                    </div>
+                    <div class="value-content">
+                        Transformar la infancia para cambiar el futuro. Porque una infancia sanada puede cambiar el mundo.
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="summary-box">
-            <div class="summary-title">Dato Clave:</div>
-            <div class="summary-content">El <span>75%</span> de los problemas mentales en adultos comienzan <span>antes de los 18 años</span>.</div>
-        </div>
+        <!--<div class="highlighted-quote animate-fade-in delay-4">
+            <div class="quote-text">Una historia a tiempo puede sanar</div>
+        </div> -->
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate counters
-            const options = {
-                duration: 2,
-                useEasing: true,
-                useGrouping: false
-            };
-
-            setTimeout(() => {
-                new CountUp('counter1', 0, 10, 0, 1.5, options).start();
-                new CountUp('counter2', 0, 20.8, 1, 1.5, options).start();
-                new CountUp('counter3', 0, 70, 0, 1.5, options).start();
-                new CountUp('counter4', 0, 58, 0, 1.5, options).start();
-            }, 800);
-
-            // Initialize chart
-            setTimeout(() => {
-                initializeChart();
-            }, 1300);
-        });
-
-        function initializeChart() {
-            const ctx = document.getElementById('mentalHealthChart').getContext('2d');
-
-            // Create gradient
-            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(112, 33, 204, 0.6)');
-            gradient.addColorStop(1, 'rgba(112, 33, 204, 0.1)');
-
-            const chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
-                    datasets: [{
-                        label: 'Problemas de salud mental infantil (%)',
-                        data: [12, 13, 14.5, 15.2, 16.8, 19.5, 21, 20.5, 20.8, 21.2],
-                        backgroundColor: gradient,
-                        borderColor: '#7021CC',
-                        borderWidth: 3,
-                        tension: 0.4,
-                        pointRadius: 5,
-                        pointBackgroundColor: '#7021CC',
-                        pointHoverRadius: 8,
-                        pointHoverBackgroundColor: '#FF9D00',
-                        pointHoverBorderWidth: 3,
-                        pointHoverBorderColor: 'rgba(255, 157, 0, 0.5)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    animation: {
-                        duration: 2000,
-                        easing: 'easeOutQuart'
-                    },
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Prevalencia creciente de problemas de salud mental infantil 2015-2024',
-                            font: {
-                                family: 'Merriweather',
-                                size: 14,
-                                weight: 'bold'
-                            },
-                            color: '#7021CC',
-                            padding: {
-                                bottom: 15
-                            }
-                        },
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            backgroundColor: 'rgba(112, 33, 204, 0.9)',
-                            titleFont: {
-                                size: 14
-                            },
-                            bodyFont: {
-                                size: 12
-                            },
-                            padding: 10,
-                            displayColors: false,
-                            callbacks: {
-                                label: function(context) {
-                                    const value = context.parsed.y;
-                                    const year = context.label;
-                                    let extraInfo = "";
-
-                                    if (year === "2020") {
-                                        extraInfo = "Impacto COVID: +16% vs. año anterior";
-                                    } else if (year === "2023") {
-                                        extraInfo = "Estabilización post-pandemia";
-                                    } else if (year === "2024") {
-                                        extraInfo = "Proyección: tendencia sostenida";
-                                    }
-
-                                    const result = [`${value}% de prevalencia`];
-                                    if (extraInfo) result.push(extraInfo);
-                                    return result;
-                                }
-                            }
-                        },
-                        annotation: {
-                            annotations: {
-                                point1: {
-                                    type: 'point',
-                                    xValue: 5,
-                                    yValue: 19.5,
-                                    backgroundColor: 'rgba(255, 157, 0, 0.7)',
-                                    borderWidth: 2,
-                                    borderColor: 'white',
-                                    radius: 8
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            min: 10,
-                            max: 25,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                },
-                                font: {
-                                    weight: 'bold'
-                                }
-                            },
-                            title: {
-                                display: true,
-                                text: 'Porcentaje',
-                                font: {
-                                    weight: 'bold'
-                                }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            },
-                            title: {
-                                display: true,
-                                text: 'Año',
-                                font: {
-                                    weight: 'bold'
-                                }
-                            }
-                        }
-                    },
-                    elements: {
-                        line: {
-                            borderWidth: 3
-                        }
-                    }
-                }
-            });
-
-            // Animate the chart drawing
-            let drawChart = Chart.controllers.line.prototype.draw;
-            Chart.controllers.line.prototype.draw = function() {
-                let chart = this.chart;
-                let ctx = chart.ctx;
-                let _stroke = ctx.stroke;
-                ctx.stroke = function() {
-                    ctx.save();
-                    ctx.shadowColor = 'rgba(112, 33, 204, 0.5)';
-                    ctx.shadowBlur = 10;
-                    ctx.shadowOffsetX = 0;
-                    ctx.shadowOffsetY = 4;
-                    _stroke.apply(this, arguments);
-                    ctx.restore();
-                };
-                drawChart.apply(this, arguments);
-                ctx.stroke = _stroke;
-            };
-        }
-    </script>
+    <script src="https://www.genspark.ai/slide-inner.js?_v=1"></script>
 </body>
 </html>
