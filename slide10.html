@@ -32,7 +32,8 @@
       color: #7021CC;
       font-size: 32px;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 60px;
+      margin: 30px 0 20px;
       text-align: center;
       animation: fadeIn 0.8s ease-out;
     }
@@ -310,13 +311,46 @@
     </div>
   </div>
 
-  <div class="arch-container">
-    <h3 class="arch-title"><i class="fas fa-project-diagram"></i> Arquitectura Técnica</h3>
-      <div class="arch-img-wrapper">
-        <div class="scroll-hint-top"></i> Desliza la imagen →</div>
-        <img src="images/arch1.png" alt="Arquitectura Técnica de Newslittle" class="arch-img">
-        <div class="tech-tag"><i class="fas fa-code-branch"></i> Escalable</div>
+<div class="arch-container">
+  <h3 class="arch-title"><i class="fas fa-stream"></i> Cómo funciona nuestra tecnología</h3>
+  <div class="flex flex-col lg:flex-row justify-around items-center space-y-8 lg:space-y-0 lg:space-x-8 px-6 mt-8">
+
+    <!-- Paso 1: Cloud -->
+    <div class="flex flex-col items-center text-center max-w-xs">
+      <div class="w-16 h-16 flex items-center justify-center rounded-full bg-purple-200 text-purple-800 text-2xl mb-4 shadow-md">
+        <i class="fas fa-cloud"></i>
       </div>
+      <h4 class="text-lg font-semibold text-purple-700 mb-2">Cloud Escalable</h4>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        Toda la infraestructura está desplegada en Google Cloud, con arquitectura moderna, balanceo de carga y escalabilidad global.
+      </p>
+    </div>
+
+    <!-- Paso 2: IA Propia -->
+    <div class="flex flex-col items-center text-center max-w-xs">
+      <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-200 text-yellow-700 text-2xl mb-4 shadow-md">
+        <i class="fas fa-brain"></i>
+      </div>
+      <h4 class="text-lg font-semibold text-yellow-700 mb-2">IA de Imagen Propia</h4>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        Entrenamos nuestros propios modelos de difusión para generar imágenes seguras y coherentes, guiadas por psicólogos infantiles.
+      </p>
+    </div>
+
+    <!-- Paso 3: Seguridad -->
+    <div class="flex flex-col items-center text-center max-w-xs">
+      <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-200 text-green-700 text-2xl mb-4 shadow-md">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h4 class="text-lg font-semibold text-green-700 mb-2">Privacidad & Ética</h4>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        Protegemos la infancia desde el diseño. No almacenamos datos sensibles y cumplimos con GDPR desde el primer día.
+      </p>
+    </div>
+
   </div>
+</div>
+
+
 </body>
 </html>
