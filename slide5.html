@@ -45,6 +45,7 @@
     transition: all 0.3s ease;
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
+    text-align: center;
   }
   .step-box:nth-child(1) { animation-delay: 0.6s; }
   .step-box:nth-child(2) { animation-delay: 0.8s; }
@@ -67,6 +68,9 @@
   .step-description {
     font-size: 14px;
     color: #555;
+    list-style: none;         /* Quita los puntitos */
+    padding-left: 0;          /* Elimina el espacio lateral */
+    text-align: center;
   }
   .step-icon {
     font-size: 22px;
@@ -167,15 +171,14 @@
       <div class="video-fallback">Si el video no se muestra, visite: <a href="https://drive.google.com/file/d/1JHgpSyrlNhR4N8Fz5dxfpsaJERfGQ2lm/view" target="_blank">Ver video en Google Drive</a></div>
     </div>
 
-    <div class="grid grid-cols-3 gap-6 mt-4">
+<div class="flex justify-center items-start gap-10 mt-4">
       <div class="step-box">
         <div class="step-number" style="color: #7021CC;">Paso 1</div>
         <div class="step-title">Conexión personal</div>
         <div class="step-description">
-          <ul class="list-disc pl-5 space-y-1">
             <li>Subir foto del objeto de apego del niño (peluche, dibujo o mascota)</li>
             <li>Interfaz intuitiva usable por cuidadores, profesionales o padres</li>
-          </ul>
+
         </div>
         <div class="flex-grow"></div>
         <div class="step-icon" style="color: #7021CC;"><i class="fas fa-camera"></i></div>
@@ -185,10 +188,8 @@
         <div class="step-number" style="color: #1688B1;">Paso 2</div>
         <div class="step-title">Perfil emocional</div>
         <div class="step-description">
-          <ul class="list-disc pl-5 space-y-1">
             <li>Definición del contexto y necesidad emocional</li>
             <li>Adaptación a edad, etapa clínica, idioma y entorno cultural</li>
-          </ul>
         </div>
         <div class="flex-grow"></div>
         <div class="step-icon" style="color: #1688B1;"><i class="fas fa-heart"></i></div>
@@ -198,10 +199,9 @@
         <div class="step-number" style="color: #FF9D00;">Paso 3</div>
         <div class="step-title">Compartir y acompañar</div>
         <div class="step-description">
-          <ul class="list-disc pl-5 space-y-1">
             <li>Disponible en múltiples formatos (digital, audio, imprimible)</li>
             <li>Guías para adultos que acompañan al niño</li>
-          </ul>
+
         </div>
         <div class="flex-grow"></div>
         <div class="step-icon" style="color: #FF9D00;"><i class="fas fa-share-alt"></i></div>
