@@ -9,123 +9,114 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, rgba(206, 171, 255, 0.15) 0%, rgba(249, 199, 100, 0.15) 100%);
-      margin: 0;
+      background: linear-gradient(135deg, rgba(206, 171, 255, 0.15), rgba(249, 199, 100, 0.15));
       padding: 60px 20px;
       color: #381066;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       text-align: center;
     }
-
-    h2 {
+    h1 {
       font-family: 'Merriweather', serif;
-      font-size: 36px;
+      font-size: 48px;
       font-weight: 700;
       color: #7021CC;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
-
-    p.subtitle {
-      font-size: 18px;
-      color: #333;
-      max-width: 800px;
-      margin-bottom: 40px;
-      line-height: 1.5;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      max-width: 400px;
-      width: 100%;
-      margin-bottom: 50px;
-    }
-
-    .card {
+    .deal-box {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      padding: 30px 20px;
-      transition: transform 0.3s ease;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      padding: 40px 30px;
+      margin: 40px auto 60px;
+      max-width: 480px;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .value {
-      font-size: 32px;
+    .deal-amount {
+      font-size: 48px;
       font-weight: 700;
-    }
-
-    .label {
-      font-size: 14px;
-      color: #666;
-      margin-top: 6px;
-    }
-
-    .highlight {
       color: #FF9D00;
-      font-weight: 600;
     }
-
+    .deal-equity {
+      font-size: 24px;
+      color: #381066;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .deal-context {
+      font-size: 18px;
+      color: #444;
+      margin-top: 20px;
+    }
     .investment-details {
-      max-width: 760px;
-      font-size: 16px;
-      color: #555;
-      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
     }
-
-    .investment-details strong {
-      color: #1688B1;
+    .section-title {
+      font-weight: 600;
+      color: #7021CC;
+      font-size: 20px;
+      margin: 40px 0 12px;
+    }
+    .bar-container {
+      background-color: #f3f3f3;
+      border-radius: 9999px;
+      height: 24px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .bar-fill {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
 
-  <h2>Buscamos aliados para escalar Newslittle</h2>
+  <h1>Invertir en Newslittle</h1>
 
-  <p class="subtitle">
-    Abrimos una ronda de <strong>100.000 €</strong> a cambio del <span class="highlight">10 % de la compañía</span>, para llevar nuestros cuentos terapéuticos personalizados a miles de niños en todo el mundo.
-  </p>
-
-<div class="grid-container">
-  <div class="card">
-    <div class="value">100k €</div>
-    <div class="label">10 % equity</div>
+  <div class="deal-box">
+    <div class="deal-amount">100.000 €</div>
+    <div class="deal-equity">por el 10 % de equity</div>
+    <p class="deal-context">
+      Valoración: 1M € • Serie A en 12 meses
+    </p>
   </div>
-  <div class="card">
-    <div class="value">+1.200</div>
-    <div class="label">Cuentos generados</div>
-  </div>
-  <div class="card">
-    <div class="value">&lt;5 min</div>
-    <div class="label">Tiempo de creación</div>
-  </div>
-  <div class="card">
-    <div class="value">3 canales</div>
-    <div class="label">Familias, escuelas y hospitales</div>
-  </div>
-  <div class="card">
-    <div class="value">Freemium</div>
-    <div class="label">Modelo global escalable</div>
-  </div>
-  <div class="card">
-    <div class="value">+10</div>
-    <div class="label">Alianzas estratégicas</div>
-  </div>
-</div>
 
   <div class="investment-details">
-    El capital se invertirá en:<br />
-    <strong>• Tecnología</strong>: automatización, IA, escalabilidad<br />
-    <strong>• Marketing</strong>: adquisición de usuarios B2C y ventas B2B<br />
-    <strong>• Validación clínica</strong> en hospitales pediátricos<br />
-    <strong>• Equipo</strong>: perfiles clave en psicología, producto y negocio
+    <div class="section-title">💸 Distribución del capital</div>
+
+    <div>
+      <p><strong>Desarrollo (30 %)</strong> — 10 cuentos terapéuticos validados</p>
+      <div class="bar-container"><div class="bar-fill" style="width: 30%; background-color: #7C3AED;">30%</div></div>
+
+      <p><strong>Validación (25 %)</strong> — Hospitales y colegios piloto</p>
+      <div class="bar-container"><div class="bar-fill" style="width: 25%; background-color: #EC4899;">25%</div></div>
+
+      <p><strong>Equipo (25 %)</strong> — Psicóloga clínica + IA developer</p>
+      <div class="bar-container"><div class="bar-fill" style="width: 25%; background-color: #3B82F6;">25%</div></div>
+
+      <p><strong>Go-To-Market (20 %)</strong> — Usuarios iniciales y adquisición</p>
+      <div class="bar-container"><div class="bar-fill" style="width: 20%; background-color: #F59E0B;">20%</div></div>
+    </div>
+
+    <div class="section-title">🚀 Hitos esperados en 12 meses</div>
+    <ul class="list-disc pl-5 text-gray-700">
+      <li><strong>Q1:</strong> MRR de 15–30 K € con instituciones</li>
+      <li><strong>Q2:</strong> App MVP + 500 familias activas</li>
+      <li><strong>Q4:</strong> Cierre de Serie A (500K–1M €)</li>
+    </ul>
+
+    <div class="section-title">🎯 ¿Por qué invertir ahora?</div>
+    <ul class="list-disc pl-5 text-gray-700">
+      <li>Primera tecnología que transforma peluches en cuentos terapéuticos personalizados</li>
+      <li>Validación clínica + tracción inicial en hospitales</li>
+      <li>Alta sensibilidad emocional + escalabilidad global</li>
+      <li>Oportunidad de entrar antes de la Serie A con x10 potencial</li>
+    </ul>
   </div>
 
 </body>

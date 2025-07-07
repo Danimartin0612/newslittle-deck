@@ -298,6 +298,52 @@
                 transform: translateY(-5px);
             }
         }
+        .image-gallery {
+  max-width: 1600px;
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 2.5s;
+}
+
+.story-card {
+  background: linear-gradient(145deg, #ffffff, #f6f6f6);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width:300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.story-title {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #7021CC;
+  text-align: center;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -359,38 +405,21 @@
                 <div class="flow-desc">Revisión por psicólogos infantiles y pruebas en entornos reales</div>
             </div>
         </div>
-
-    <div class="case-study">
-  <div class="case-study-title">Niños con ansiedad escolar (bullying, exámenes, separación)</div>
-
-  <div class="case-study-content">
-    <div class="challenge">
-      <div class="challenge-title">
-        <i class="fas fa-exclamation-circle"></i>
-        Desafío Emocional
-      </div>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>Ansiedad intensa ante evaluaciones o presentaciones</li>
-        <li>Dificultad para integrarse socialmente en el aula</li>
-        <li>Temor a la separación de figuras de apego</li>
-        <li>Bloqueo emocional frente a situaciones nuevas o conflictivas</li>
-      </ul>
-    </div>
-
-    <div class="solution">
-      <div class="solution-title">
-        <i class="fas fa-star"></i>
-        Recurso Terapéutico
-      </div>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>Cuento protagonizado por su peluche, convertido en guía o compañero de clase</li>
-        <li>Historias que normalizan el error y la incertidumbre con metáforas suaves</li>
-        <li>Escenarios que modelan habilidades sociales y autorregulación emocional</li>
-        <li>Guías para adultos con pautas para acompañar desde casa o la escuela</li>
-      </ul>
-    </div>
+<div class="image-gallery">
+  <div class="story-card">
+    <img src="images/primer.jpg" alt="Caso 1" class="gallery-img">
+    <div class="story-title">Primer día de colegio</div>
+  </div>
+  <div class="story-card">
+    <img src="images/emociones.jpg" alt="Caso 2" class="gallery-img">
+    <div class="story-title">Las primeras emociones en clase</div>
+  </div>
+  <div class="story-card">
+    <img src="images/comida.jpg" alt="Caso 3" class="gallery-img">
+    <div class="story-title">Aprende de los alimentos</div>
   </div>
 </div>
+
     </div>
 </body>
 </html>
