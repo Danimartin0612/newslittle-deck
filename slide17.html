@@ -7,8 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-          <link rel="stylesheet" href="global.css">
-
+  <link rel="stylesheet" href="global.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -27,7 +26,7 @@
     }
     h1, h2, h3 {
       font-family: 'Merriweather', serif;
-      color: #7021CC
+      color: #7021CC;
     }
     .fade-in {
       opacity: 0;
@@ -44,60 +43,28 @@
       padding: 40px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       position: relative;
+      width: 100%;
     }
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
-    .featured-badge {
-      position: absolute;
-      top: -20px;
-      right: -20px;
-      background-color: #FF9D00;
-      color: white;
-      font-size: 14px;
-      padding: 6px 14px;
-      font-weight: bold;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-    .bar-container {
-      background-color: #E5E7EB;
-      border-radius: 9999px;
-      height: 22px;
-      overflow: hidden;
-      margin-bottom: 16px;
-    }
-    .bar-fill {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding-left: 12px;
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 9999px;
-    }
   </style>
 </head>
-<body class="py-16 px-6 xl:px-16 relative">
+<body class="py-16 px-0 relative text-center w-full">
   <div class="gradient-bg"></div>
-<div class="logo-small">
-            <span class="new">New</span><span class="little">Little</span>
-        </div>
-  <h1 class="text-5xl text-center font-bold text-[#7021CC] mb-16 fade-in">Inversión en Newslittle</h1>
 
-  <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+  <div class="logo-small mb-6">
+    <span class="new text-[#7021CC] text-2xl font-bold">New</span><span class="little text-[#FF9D00] text-2xl font-bold">Little</span>
+  </div>
+
+  <h1 class="text-5xl font-bold text-[#7021CC] mb-16 fade-in">Inversión en Newslittle</h1>
+
+  <div class="w-full max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 gap-y-16 fade-in">
 
     <!-- Box 1: Oferta -->
-    <div class="card text-center">
-      <h2 class="text-6xl font-bold text-[#FF9D00] mb-2">100.000€</h2>
+    <div class="card flex flex-col justify-center items-center">
+      <h1 class="text-6xl font-bold text-[#FF9D00] mb-2">100.000€</h1>
       <p class="text-2xl font-semibold text-[#381066]">por el 10 % de equity</p>
       <p class="text-lg text-gray-600 mt-6 leading-relaxed">
         Valoración pre-money: <strong>1M €</strong><br>
@@ -109,37 +76,31 @@
     <div class="card">
       <h3 class="text-2xl font-bold text-[#7021CC] mb-6">💰 Distribución del capital</h3>
 
-      <p class="mb-1"><strong>Desarrollo (30%)</strong> – 10 cuentos terapéuticos validados</p>
-      <div class="bar-container"><div class="bar-fill" style="width: 30%; background-color: #7021CC;">30%</div></div>
-
-      <p class="mb-1"><strong>Validación (25%)</strong> – Hospitales y colegios piloto</p>
-      <div class="bar-container"><div class="bar-fill" style="width: 25%; background-color: #FF9D00;">25%</div></div>
-
-      <p class="mb-1"><strong>Equipo (25%)</strong> – Psicóloga clínica + IA developer</p>
-      <div class="bar-container"><div class="bar-fill" style="width: 25%; background-color: #3B82F6;">25%</div></div>
-
-      <p class="mb-1"><strong>Go-To-Market (20%)</strong> – Usuarios iniciales y adquisición</p>
-      <div class="bar-container"><div class="bar-fill" style="width: 20%; background-color: #F59E0B;">20%</div></div>
+      <p><strong>Desarrollo (30%)</strong> – 10 cuentos terapéuticos validados</p><br>
+      <p><strong>Validación (25%)</strong> – Hospitales y colegios piloto</p><br>
+      <p><strong>Equipo (25%)</strong> – Psicóloga clínica + IA developer</p><br>
+      <p><strong>Go-To-Market (20%)</strong> – Usuarios iniciales y adquisición</p>
     </div>
 
     <!-- Box 3: Hitos -->
     <div class="card">
       <h3 class="text-2xl font-bold text-[#7021CC] mb-6">🚀 Hitos esperados en 12 meses</h3>
-      <ul class="list-disc list-inside text-gray-700 text-lg space-y-2">
-        <li><strong>Q1:</strong> MRR de 15–30 K € con instituciones aliadas</li>
-        <li><strong>Q2:</strong> App MVP funcional + 500 familias activas</li>
-        <li><strong>Q4:</strong> Cierre de Serie A (500K–1M €)</li>
-      </ul>
+      <div class="text-gray-700 text-lg leading-relaxed">
+        <strong>Q1:</strong> 5 hospitales + 1 institución educativa → <strong>15K €/mes MRR</strong><br><br>
+        <strong>Q2:</strong> MVP funcional → <strong>500 usuarios activos/mes</strong><br><br>
+        <strong>Q3:</strong> Validación clínica → <strong>Publicación científica</strong><br><br>
+        <strong>Q4:</strong> Serie A ready → <strong>x M€ ronda abierta</strong> (inversor actual ×4,5 retorno estimado)
+      </div>
     </div>
 
     <!-- Box 4: Por qué invertir -->
     <div class="card">
       <h3 class="text-2xl font-bold text-[#7021CC] mb-6">🎯 ¿Por qué invertir ahora?</h3>
-      <ul class="list-disc list-inside text-gray-700 text-lg space-y-2">
-        <li>Primera tecnología que convierte peluches en cuentos terapéuticos</li>
-        <li>Validación clínica con hospitales + tracción inicial</li>
-        <li>Modelo emocionalmente potente y escalable globalmente</li>
-      </ul>
+      <div class="text-gray-700 text-lg leading-relaxed">
+        Primera tecnología que convierte peluches en cuentos terapéuticos<br><br>
+        Validación clínica con hospitales + tracción inicial<br><br>
+        Modelo emocionalmente potente y escalable globalmente
+      </div>
     </div>
 
   </div>
