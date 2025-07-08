@@ -5,106 +5,507 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inversión en Newslittle</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="global.css">
+
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: white;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
       margin: 0;
       padding: 0;
+      overflow: hidden;
     }
-    .gradient-bg {
-      background: linear-gradient(135deg, rgba(206, 171, 255, 0.1), rgba(249, 199, 100, 0.1));
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    h1, h2, h3 {
-      font-family: 'Merriweather', serif;
-      color: #7021CC;
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease-in-out forwards;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .card {
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-      padding: 40px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    .slide-container {
+      background: white;
+      width: 100vw;
+      height: 100vh;
+      aspect-ratio: 16/9;
+      padding: 2rem;
       position: relative;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    .brand-logo {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      z-index: 10;
+    }
+
+    .brand-new {
+      color: #7C3AED;
+    }
+
+    .brand-little {
+      color: #F59E0B;
+    }
+
+    .slide-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .slide-title {
+      color: #7C3AED;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+    }
+
+    .slide-subtitle {
+      color: #6b7280;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .main-content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      height: 100%;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .offer-section {
+      background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.1); opacity: 0.1; }
+    }
+
+    .offer-amount {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      letter-spacing: -2px;
+      line-height: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-equity {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-details {
+      display: flex;
+      justify-content: space-around;
+      font-size: 1rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+    }
+
+    .offer-detail {
+      text-align: center;
+    }
+
+    .detail-label {
+      opacity: 0.8;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .detail-value {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .distribution-section {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 2px solid #e2e8f0;
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-emoji {
+      margin-right: 0.75rem;
+      font-size: 1.5rem;
+    }
+
+    .progress-item {
+      margin-bottom: 1rem;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .progress-label {
+      font-weight: 700;
+      color: #1f2937;
+      font-size: 0.95rem;
+    }
+
+    .progress-percentage {
+      font-weight: 800;
+      color: #7C3AED;
+      font-size: 0.95rem;
+    }
+
+    .progress-description {
+      color: #6b7280;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar {
+      height: 20px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.8rem;
+      border-radius: 10px;
+    }
+
+    .milestones-section {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 2px solid #e2e8f0;
+      flex: 1;
+    }
+
+    .milestone-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid #7C3AED;
+    }
+
+    .milestone-quarter {
+      font-weight: 900;
+      color: #7C3AED;
+      margin-right: 1rem;
+      min-width: 30px;
+      font-size: 1rem;
+    }
+
+    .milestone-text {
+      color: #4b5563;
+      flex: 1;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .milestone-highlight {
+      color: #059669;
+      font-weight: 700;
+    }
+
+    .why-invest-section {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 2px solid #e2e8f0;
+      flex: 1;
+    }
+
+    .value-prop-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid #F59E0B;
+    }
+
+    .value-prop-bullet {
+      color: #F59E0B;
+      margin-right: 0.75rem;
+      font-weight: 900;
+      font-size: 1.2rem;
+      margin-top: 0.1rem;
+    }
+
+    .value-prop-text {
+      color: #4b5563;
+      line-height: 1.4;
+      font-size: 0.9rem;
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .value-prop-highlight {
+      color: #1f2937;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1200px) {
+      .slide-container {
+        padding: 1.5rem;
+      }
+
+      .slide-title {
+        font-size: 2.5rem;
+      }
+
+      .offer-amount {
+        font-size: 3rem;
+      }
+
+      .main-content {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .slide-container {
+        padding: 1rem;
+      }
+
+      .brand-logo {
+        position: static;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .slide-header {
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
-<body class="py-16 px-0 relative text-center w-full">
-  <div class="gradient-bg"></div>
 
-  <div class="logo-small">
+<body>
+  <div class="slide-container">
+    <!-- Brand Logo -->
+    <div class="logo-small">
             <span class="new">New</span><span class="little">Little</span>
         </div>
 
-  <h1 class="text-5xl font-bold text-[#7021CC] mb-16 fade-in">Inversión en Newslittle</h1>
-
-<!-- Dentro del body... -->
-<div class="w-full px-0 fade-in">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    <!-- Box 1: Oferta -->
-    <div class="card flex flex-col justify-center items-center min-h-[420px] w-full">
-      <h1 class="text-8xl font-extrabold text-[#FF9D00] mb-4">100.000€</h1>
-      <p class="text-3xl font-semibold text-[#381066] mb-4">por el 10 % de equity</p>
-      <p class="text-xl text-gray-600 leading-relaxed">
-        Valoración pre-money: <strong>1M €</strong><br>
-        Objetivo: <strong>Serie A en 12 meses</strong>
-      </p>
+    <!-- Header -->
+    <div class="slide-header">
+      <h1 class="slide-title">Inversión en Newslittle</h1>
+      <p class="slide-subtitle">Transformando la terapia infantil con cuentos personalizados</p>
     </div>
 
-    <!-- Box 2: Distribución -->
-    <div class="card flex flex-col justify-center min-h-[420px] w-full">
-      <h3 class="text-3xl font-bold text-[#7021CC] mb-6">💰 Distribución del capital</h3>
-      <p class="text-xl"><strong>Desarrollo (30%)</strong> – 10 cuentos terapéuticos validados</p><br>
-      <p class="text-xl"><strong>Validación (25%)</strong> – Hospitales y colegios piloto</p><br>
-      <p class="text-xl"><strong>Equipo (25%)</strong> – Psicóloga clínica + IA developer</p><br>
-      <p class="text-xl"><strong>Go-To-Market (20%)</strong> – Usuarios iniciales y adquisición</p>
-    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Investment Offer -->
+        <div class="offer-section">
+          <div class="offer-amount">100.000€</div>
+          <div class="offer-equity"><strong>por el 10% de equity</strong></div>
+          <div class="offer-details">
+            <div class="offer-detail">
+              <div class="detail-label">Valoración pre-money</div>
+              <div class="detail-value">1M€</div>
+            </div>
+            <div class="offer-detail">
+              <div class="detail-label">Objetivo</div>
+              <div class="detail-value">Serie A en 12 meses</div>
+            </div>
+          </div>
+        </div>
 
-    <!-- Box 3: Hitos -->
-    <div class="card flex flex-col justify-center min-h-[420px] w-full">
-      <h3 class="text-3xl font-bold text-[#7021CC] mb-6">🚀 Hitos esperados en 12 meses</h3>
-      <div class="text-gray-700 text-xl leading-relaxed">
-        <strong>Q1:</strong> 5 hospitales + 1 institución educativa → <strong>15K €/mes MRR</strong><br><br>
-        <strong>Q2:</strong> MVP funcional → <strong>500 usuarios activos/mes</strong><br><br>
-        <strong>Q3:</strong> Validación clínica → <strong>Publicación científica</strong><br><br>
-        <strong>Q4:</strong> Serie A ready → <strong>x M€ ronda abierta</strong> (inversor actual ×4,5 retorno estimado)
+        <!-- Capital Distribution -->
+        <div class="distribution-section">
+          <div class="section-title">
+            <span class="section-emoji">💰</span>
+            <strong>Distribución del capital</strong>
+          </div>
+
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Desarrollo</span>
+              <span class="progress-percentage">30%</span>
+            </div>
+            <div class="progress-description"><strong>10 cuentos terapéuticos validados</strong></div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 30%; background: #7C3AED;">30%</div>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Validación</span>
+              <span class="progress-percentage">25%</span>
+            </div>
+            <div class="progress-description"><strong>Hospitales y colegios piloto</strong></div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 25%; background: #F59E0B;">25%</div>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Equipo</span>
+              <span class="progress-percentage">25%</span>
+            </div>
+            <div class="progress-description"><strong>Psicóloga clínica + IA developer</strong></div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 25%; background: #3B82F6;">25%</div>
+            </div>
+          </div>
+
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label">Go-To-Market</span>
+              <span class="progress-percentage">20%</span>
+            </div>
+            <div class="progress-description"><strong>Usuarios iniciales y adquisición</strong></div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 20%; background: #F59E0B;">20%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Milestones -->
+        <div class="milestones-section">
+          <div class="section-title">
+            <span class="section-emoji">🚀</span>
+            <strong>Hitos esperados en 12 meses</strong>
+          </div>
+
+          <div class="milestone-item">
+            <div class="milestone-quarter">Q1:</div>
+            <div class="milestone-text">
+              <strong>MRR de 15-30K€</strong> con instituciones aliadas
+            </div>
+          </div>
+
+          <div class="milestone-item">
+            <div class="milestone-quarter">Q2:</div>
+            <div class="milestone-text">
+              <strong>App MVP funcional</strong> + <span class="milestone-highlight">500 familias activas</span>
+            </div>
+          </div>
+
+          <div class="milestone-item">
+            <div class="milestone-quarter">Q3:</div>
+            <div class="milestone-text">
+              <strong>Validación clínica</strong> + publicación estudio
+            </div>
+          </div>
+
+          <div class="milestone-item">
+            <div class="milestone-quarter">Q4:</div>
+            <div class="milestone-text">
+              <strong>Cierre de Serie A</strong> <span class="milestone-highlight">(500K-1M€)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Invest -->
+        <div class="why-invest-section">
+          <div class="section-title">
+            <span class="section-emoji">🎯</span>
+            <strong>¿Por qué invertir ahora?</strong>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-bullet">•</div>
+            <div class="value-prop-text">
+              <span class="value-prop-highlight">Primera tecnología</span> que convierte peluches en cuentos terapéuticos
+            </div>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-bullet">•</div>
+            <div class="value-prop-text">
+              <span class="value-prop-highlight">Validación clínica</span> con hospitales + tracción inicial
+            </div>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-bullet">•</div>
+            <div class="value-prop-text">
+              <span class="value-prop-highlight">Modelo emocionalmente potente</span> y escalable globalmente
+            </div>
+          </div>
+
+          <div class="value-prop-item">
+            <div class="value-prop-bullet">•</div>
+            <div class="value-prop-text">
+              <span class="value-prop-highlight">Timing perfecto</span> para capturar el mercado de salud mental infantil
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Box 4: Por qué invertir -->
-    <div class="card flex flex-col justify-center min-h-[420px] w-full">
-      <h3 class="text-3xl font-bold text-[#7021CC] mb-6">🎯 ¿Por qué invertir ahora?</h3>
-      <div class="text-gray-700 text-xl leading-relaxed">
-        Primera tecnología que convierte peluches en cuentos terapéuticos<br><br>
-        Validación clínica con hospitales + tracción inicial<br><br>
-        Modelo emocionalmente potente y escalable globalmente
-      </div>
-    </div>
-
   </div>
-</div>
 </body>
 </html>
